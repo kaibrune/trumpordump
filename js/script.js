@@ -34,7 +34,7 @@ $(function (){
     $( "#infoimg" ).click(function() { $('#info').slideToggle({direction: "up"}, 4000);});
     $( "#exit" ).click(function() { $('#info').slideToggle({direction: "down"}, 4000);});
 
-    $( "#speaker" ).click(function() { sound = false; console.log(sound)});
+    $( "#speaker" ).click(function() { sound = false; if (sound == false) { sound=true;} });
 
         $.ajax({ // startet ajax
         type: 'GET', //modus
