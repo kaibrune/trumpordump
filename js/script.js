@@ -13,7 +13,7 @@ $(function (){
 
     var dates = ["Jan.", "Feb.", "Mar.", "Apr.", "May", "Jun.", "Jul.", "Aug.", "Sep.", "Oct.", "Nov.", "Dez."];
     var date2 = dates[Math.floor(Math.random() * dates.length)];
-    var years = ["2017", "2018", "2016"];
+    var years = ["2017", "2018", "2016", "2015", "2014"];
     var year = years[Math.floor(Math.random() * years.length)];
     var randomheart1 = Math.floor(Math.random()*999) + 1;
     var randomheart2 = Math.floor(Math.random()*9) + 1;
