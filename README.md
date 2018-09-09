@@ -16,3 +16,5 @@ Basically, the game is as easy as the politics of Trump himself. Randomly select
 Give it a try at [TrumpOrDump.de](https://trumpordump.de).
 
 **ProTip:** The game is also great as a **drinking game**. Have a go, at every wrong answer.
+
+![License](https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png)
