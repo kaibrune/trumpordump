@@ -9,6 +9,7 @@ $(function (){
     $('#right2').hide();
     $('#wrong2').hide();
     $('#info').hide();
+/*     $('#score').hide(); */
 
     var $tweetcontainer= $('#inhalt');//variabel für den div mit der id inhalt wird asynchron mit dem dom geladen
 
@@ -68,7 +69,12 @@ $(function (){
                 $('#right').delay(2500).slideToggle({direction: "down"}, 4000);
                 playRightSound();
                 countRightAnswers();
-                $('#score').html("<b>+100</b>");
+                $('#btntext1').fadeOut();
+                setTimeout(() => {
+                $('#score').html(points).addClass('animated tada');
+                }, 500);
+
+
                 setTimeout(() => {//timeout setzen für 1s
                 $tweetcontainer.css('color', 'black');  //farbe wieder auf schwarz ändern
                 $tweetcontainer.html('<p>'+ data[r].text +'</p>'); //neuen wurf in container schreiben
@@ -77,6 +83,10 @@ $(function (){
                 $('#clock').html(clock1 +':'+ clock2);
                 $('#date').html(date1 +' '+ date2 +' '+ year);
                 }, 1000);
+                setTimeout(() => {
+                    $('#btntext1').fadeIn();
+                    $('#score').fadeOut();
+                }, 2000);
             } else if (status == 0) {//gleiches spiel nur anders rum
                 var r = Math.floor(Math.random() * ((data.length - 1) - 0 + 1) + 0);
                 status = parseInt(data[r].status);

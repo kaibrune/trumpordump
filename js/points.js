@@ -4,11 +4,23 @@ var trumphead = true;
 function countRightAnswers() {
   points = points + 100;
   console.log(points);
+  if (points >= 0){
+    document.getElementById("score").style.color = "green"; 
+  }
+  else{
+    document.getElementById("score").style.color = "red"; 
+  }
 }
 
 function countWrongAnswers() {
   points = points - 50;
   console.log(points);
+  if (points >= 0){
+    document.getElementById("score").style.color = "green"; 
+  }
+  else{
+    document.getElementById("score").style.color = "red"; 
+  }
 }
 
 function countTrumpHead() {
@@ -21,3 +33,6 @@ function countTrumpHead() {
   }
   trumphead = false;
 }
+
+
+
