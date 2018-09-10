@@ -67,6 +67,7 @@ $(function (){
                 $('#right').slideToggle({direction: "up"}, 4000);
                 $('#right').delay(2500).slideToggle({direction: "down"}, 4000);
                 playRightSound();
+                countRightAnswers();
                 setTimeout(() => {//timeout setzen für 1s
                 $tweetcontainer.css('color', 'black');  //farbe wieder auf schwarz ändern
                 $tweetcontainer.html('<p>'+ data[r].text +'</p>'); //neuen wurf in container schreiben
@@ -93,6 +94,7 @@ $(function (){
                 $('#wrong').slideToggle({direction: "up"}, 4000);
                 $('#wrong').delay(2500).slideToggle({direction: "down"}, 4000);
                 playWrongSound();
+                countWrongAnswers();
                 setTimeout(() => {
                 $tweetcontainer.css('color', 'black');  
                 $tweetcontainer.html('<p>'+ data[r].text +'</p>'); 
