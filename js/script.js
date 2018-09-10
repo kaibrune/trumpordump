@@ -68,6 +68,7 @@ $(function (){
                 $('#right').delay(2500).slideToggle({direction: "down"}, 4000);
                 playRightSound();
                 countRightAnswers();
+                $('#score').html("<b>+100</b>");
                 setTimeout(() => {//timeout setzen für 1s
                 $tweetcontainer.css('color', 'black');  //farbe wieder auf schwarz ändern
                 $tweetcontainer.html('<p>'+ data[r].text +'</p>'); //neuen wurf in container schreiben
