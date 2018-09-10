@@ -1,4 +1,5 @@
 $.getScript('js/sound.js');
+$.getScript('js/points.js');
 
 var sound = true;
 $(function (){
@@ -124,6 +125,7 @@ $(function (){
                 $('#right2').slideToggle({direction: "up"}, 4000);
                 $('#right2').delay(2500).slideToggle({direction: "down"}, 4000);
                 playRightSound();
+                countRightAnswers();
                 setTimeout(() => {
 /*                 $tweetcontainer.css('color', 'black');   */
                 $tweetcontainer.html('<p>'+ data[r].text +'</p>'); 
@@ -150,6 +152,7 @@ $(function (){
                 $('#wrong2').slideToggle({direction: "up"}, 4000);
                 $('#wrong2').delay(2500).slideToggle({direction: "down"}, 4000);
                 playWrongSound();
+                countWrongAnswers();
                 setTimeout(() => {
                 $tweetcontainer.css('color', 'black');  
                 $tweetcontainer.html('<p>'+ data[r].text +'</p>'); 
