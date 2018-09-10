@@ -19,10 +19,12 @@ $(function (){
     var randomheart2 = Math.floor(Math.random()*9) + 1;
     var randomcomment1 = Math.floor(Math.random()*90) + 1;
     var randomcomment2 = Math.floor(Math.random()*9) + 1;
-    var clock1 = Math.floor(Math.random()*24) + 1;
-    var clock2 = Math.floor(Math.random()*15) + 1;
-    if (clock2 < 10) {
-      clock2 = "0" + clock2.toString();
+    var clock1 = Math.floor(Math.random() * 24) + 1;
+    var clock2a = Math.floor(Math.random() * 15) + 1;
+    if (clock2a < 10) {
+      var clock2 = "0" + clock2a;
+    } else {
+      var clock2 = clock2a;
     }
     var date1 = Math.floor(Math.random()*12) + 1;
     
