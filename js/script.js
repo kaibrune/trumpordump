@@ -9,6 +9,7 @@ $(function (){
     $('#right2').hide();
     $('#wrong2').hide();
     $('#info').hide();
+/*     $('#score').hide(); */
 
     var $tweetcontainer= $('#inhalt');//variabel für den div mit der id inhalt wird asynchron mit dem dom geladen
 
@@ -38,6 +39,7 @@ $(function (){
     $( "#exit" ).click(function() { $('#info').slideToggle({direction: "down"}, 4000);});
 
     $( "#speaker" ).click(function() { sound = false;});
+    $( ".profil_img" ).click(function() { countTrumpHead();});
 
         $.ajax({ // startet ajax
         type: 'GET', //modus
@@ -67,6 +69,14 @@ $(function (){
                 $('#right').slideToggle({direction: "up"}, 4000);
                 $('#right').delay(2500).slideToggle({direction: "down"}, 4000);
                 playRightSound();
+                countRightAnswers();
+                $('#totalscore').addClass('animated fadeOut');
+                setTimeout(() => {
+                $('#score').removeClass('animated fadeOutDown');
+                $('#score').html(score).addClass('animated fadeInUp');
+                $('#totalscore').html(points).addClass('animated fadeInUp');
+                }, 700);
+
                 setTimeout(() => {//timeout setzen für 1s
                 $tweetcontainer.css('color', 'black');  //farbe wieder auf schwarz ändern
                 $tweetcontainer.html('<p>'+ data[r].text +'</p>'); //neuen wurf in container schreiben
@@ -75,6 +85,13 @@ $(function (){
                 $('#clock').html(clock1 +':'+ clock2);
                 $('#date').html(date1 +' '+ date2 +' '+ year);
                 }, 1000);
+                setTimeout(() => {
+                    $('#score').removeClass('animated fadeInUp');
+                    $('#totalscore').removeClass('animated fadeInUp');
+                    $('#score').addClass('animated fadeOutDown');
+                    $('#totalscore').removeClass('animated fadeOut');
+
+                }, 2000);
             } else if (status == 0) {//gleiches spiel nur anders rum
                 var r = Math.floor(Math.random() * ((data.length - 1) - 0 + 1) + 0);
                 status = parseInt(data[r].status);
@@ -93,6 +110,13 @@ $(function (){
                 $('#wrong').slideToggle({direction: "up"}, 4000);
                 $('#wrong').delay(2500).slideToggle({direction: "down"}, 4000);
                 playWrongSound();
+                countWrongAnswers();
+                $('#totalscore').addClass('animated fadeOut');
+                setTimeout(() => {
+                $('#score').removeClass('animated fadeOutDown');
+                $('#score').html(score).addClass('animated fadeInUp');
+                $('#totalscore').html(points).addClass('animated fadeInUp');
+                }, 700);
                 setTimeout(() => {
                 $tweetcontainer.css('color', 'black');  
                 $tweetcontainer.html('<p>'+ data[r].text +'</p>'); 
@@ -101,6 +125,13 @@ $(function (){
                 $('#clock').html(clock1 +':'+ clock2);
                 $('#date').html(date1 +' '+ date2 +' '+ year);
                 }, 1000);
+                setTimeout(() => {
+                    $('#score').removeClass('animated fadeInUp');
+                    $('#totalscore').removeClass('animated fadeInUp');
+                    $('#score').addClass('animated fadeOutDown');
+                    $('#totalscore').removeClass('animated fadeOut');
+
+                }, 2000);
             } else {
                 console.log("Error!");
             }
@@ -126,6 +157,12 @@ $(function (){
                 $('#right2').delay(2500).slideToggle({direction: "down"}, 4000);
                 playRightSound();
                 countRightAnswers();
+                $('#totalscore').addClass('animated fadeOut');
+                setTimeout(() => {
+                $('#score').removeClass('animated fadeOutDown');
+                $('#score').html(score).addClass('animated fadeInUp');
+                $('#totalscore').html(points).addClass('animated fadeInUp');
+                }, 700);
                 setTimeout(() => {
 /*                 $tweetcontainer.css('color', 'black');   */
                 $tweetcontainer.html('<p>'+ data[r].text +'</p>'); 
@@ -134,6 +171,13 @@ $(function (){
                 $('#clock').html(clock1 +':'+ clock2);
                 $('#date').html(date1 +' '+ date2 +' '+ year);
                 }, 1000);
+                setTimeout(() => {
+                    $('#score').removeClass('animated fadeInUp');
+                    $('#totalscore').removeClass('animated fadeInUp');
+                    $('#score').addClass('animated fadeOutDown');
+                    $('#totalscore').removeClass('animated fadeOut');
+
+                }, 2000);
             } else if (status == 1) {
                 var r = Math.floor(Math.random() * ((data.length - 1) - 0 + 1) + 0);
                 status = parseInt(data[r].status);
@@ -153,6 +197,12 @@ $(function (){
                 $('#wrong2').delay(2500).slideToggle({direction: "down"}, 4000);
                 playWrongSound();
                 countWrongAnswers();
+                $('#totalscore').addClass('animated fadeOut');
+                setTimeout(() => {
+                $('#score').removeClass('animated fadeOutDown');
+                $('#score').html(score).addClass('animated fadeInUp');
+                $('#totalscore').html(points).addClass('animated fadeInUp');
+                }, 700);
                 setTimeout(() => {
                 $tweetcontainer.css('color', 'black');  
                 $tweetcontainer.html('<p>'+ data[r].text +'</p>'); 
@@ -161,6 +211,13 @@ $(function (){
                 $('#clock').html(clock1 +':'+ clock2);
                 $('#date').html(date1 +' '+ date2 +' '+ year);
                 }, 1000);
+                setTimeout(() => {
+                    $('#score').removeClass('animated fadeInUp');
+                    $('#totalscore').removeClass('animated fadeInUp');
+                    $('#score').addClass('animated fadeOutDown');
+                    $('#totalscore').removeClass('animated fadeOut');
+
+                }, 2000);
             } else {
                 console.log("Error!");
             }
