@@ -1,7 +1,7 @@
 $.getScript('js/sound.js');
 $.getScript('js/points.js');
 
-var sound = true;
+var sound = false;
 $(function (){
 
     $('#right').hide();
@@ -38,7 +38,7 @@ $(function (){
     $( "#infoimg" ).click(function() { $('#info').slideToggle({direction: "up"}, 4000);});
     $( "#exit" ).click(function() { $('#info').slideToggle({direction: "down"}, 4000);});
 
-    $( "#speaker" ).click(function() { sound = false;});
+    $( "#speaker" ).click(function() { sound = true;});
     $( ".profil_img" ).click(function() { countTrumpHead();});
 
         $.ajax({ // startet ajax
