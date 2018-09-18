@@ -27,8 +27,8 @@
     <link rel="stylesheet" type="text/css" media="screen" href="css/animate.css" />
     <script src="js/jquery.min.js"></script>
     <script src="js/script.js"></script>
-    <link href="chardinjs.css" rel="stylesheet">
-    <script src="chardinjs.min.js"></script>
+    <link href="css/chardinjs.css" rel="stylesheet">
+    <script src="js/chardinjs.min.js"></script>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic">
 </head>
@@ -38,9 +38,9 @@
     <body>
         <div class="bg">
             <div class="content">
-                <div class="logo"><img src="img/logo.png"  height="165"
+                <div class="logo" data-intro="Welcome to Trump or Dump! This is a short introduction on how this game works." data-position="left"><img src="img/logo.png"  height="165"
                     width="224" class="logo_img" /></div>
-                <div class="tweet" data-intro="An awesome 18th-century painter, who found beauty in everyday, common things." data-position="right">
+                <div class="tweet" data-intro="Overhere you might have a random selected tweet from Donald Trump. Now you need to decide if this tweet is fake or real!" data-position="right">
                 <div id="scoreboard">
                  <div style="font-size:20px; right: 5px; top: -35px;z-index:10; position: absolute; color:white;" id="score"></div>
                  <div style="font-size:20px; color:#1a8acd; right: 5px; top: -35px;z-index:5; position: absolute;" id="totalscore"></div>
@@ -56,13 +56,13 @@
                             <div class="text_gray">v1.0</div>
                             <p class="info_paragraph">Politics via Twitter? Trump makes it possible. But what exactly is he tweeting all day? In TrumpOrDump, you decide which tweet is genuine and which is not. You think that's easy? Well, then look at what dump the jerk posts.</p>
                             <div class="info_row w-row">
-                                <div class="info_col1 w-col w-col-6">
-                                    <div>👩‍🎨 brought to you by <a style="text-decoration: none;"href="https://kaibrune.com">Kai Brune</a>.</div>
-                                </div>
-                                <div id="speaker" style="cursor:pointer;" class="info_col2 w-col w-col-6"><img src="img/mute.png"
-                                       class="speaker" /></div>
+                                <div class="info_col2 w-col">
+                                    <a href="https://kaibrune.com"><img src="img/kb.png" class="speaker" /></a>
+                                       <a href="https://github.com/kaibrune/trumpordump"><img src="img/git.png" class="speaker" /></a>
+                                       <a href="#"><img id="speaker" src="img/mute.png" class="speaker" /></a>
                             </div>
                         </div>
+                        </div> 
                         <div id="right" class="right">
                             <div class="info_emoji">💆</div>
                             <div class="info_text">Jup, you&#x27;re right.</div>
@@ -114,27 +114,17 @@
                             <div class="text_gray w-hidden-tiny"><span id="comment">53,8K</span> people are talking about this</div>
                             <div class="text_gray w-hidden-main w-hidden-medium w-hidden-small"><span id="comment">53,8K</span></div>
                         </div>
-                        <div id="infoimg" style="cursor:pointer;" class="col3 w-col w-col-2 w-col-small-2 w-col-tiny-2"><img src="img/info.png"
+                        <div id="infoimg" style="cursor:pointer;" class="col3 w-col w-col-2 w-col-small-2 w-col-tiny-2" ><img src="img/info.png"
                                 class="info_img" /></div>
                     </div>
                 </div>
                 <div class="buttons_con w-row">
                     <div class="buttons_col w-clearfix w-col w-col-6">
-                        <div id="yes" class="btn">
+                        <div id="yes" class="btn" data-intro="If you think the shown tweet is a masterpiece of Donald himself, press this button..." data-position="bottom">
                             <div id="btntext1" class="btn_text">🤙 That&#x27;s my boi Donald!</div>
                         </div>
                     </div>
                     <div class="buttons_col2 w-clearfix w-col w-col-6">
-                        <div id="no" class="btn">
-                            <div class="btn_text">🙅 Nah, no way!</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </body>
-
-</html>earfix w-col w-col-6">
                         <div id="no" class="btn" data-intro="...but if you're positive that this isn't a tweet by the POTUS press overhere! Have fun playing! :)" data-position="bottom">
                             <div class="btn_text">🙅 Nah, no way!</div>
                         </div>

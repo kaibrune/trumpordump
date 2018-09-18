@@ -17,9 +17,4 @@ Give it a try at [TrumpOrDump.de](https://trumpordump.de).
 
 **ProTip:** The game is also great as a **drinking game**. Have a go, at every wrong answer.
 
-### 🤙 Thank you to...
-
-[Animate.css](http://daneden.github.io/animate.css/) 
-[Chardin.js](https://github.com/heelhook/chardin.js) 
-
-
+![License](https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png)
