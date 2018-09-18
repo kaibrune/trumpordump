@@ -1,7 +1,7 @@
 $.getScript('js/sound.js');
 $.getScript('js/points.js');
 
-var sound = false;
+var sound = true;
 $(function (){
 
     $('#right').hide();
@@ -29,6 +29,21 @@ $(function (){
       var clock2 = clock2a;
     }
     var date1 = Math.floor(Math.random()*12) + 1;
+
+    if (document.cookie.indexOf("visited=") >= 0) {
+        $('body').chardinJs('stop');
+        console.log("wt");
+      }
+      else {
+        expiry = new Date();
+        expiry.setTime(expiry.getTime()+(20*60*1000));
+      
+        document.cookie = "visited=yes; expires=" + expiry.toGMTString();
+        console.log("nl");
+        if($(window).width() >= 1025) {
+            $('body').chardinJs('start');
+        }
+      }
     
     $('#heart').html(randomheart1 +','+ randomheart2 +'K');
     $('#comment').html(randomcomment1 +','+ randomcomment2 +'K');
@@ -38,7 +53,7 @@ $(function (){
     $( "#infoimg" ).click(function() { $('#info').slideToggle({direction: "up"}, 4000);});
     $( "#exit" ).click(function() { $('#info').slideToggle({direction: "down"}, 4000);});
 
-    $( "#speaker" ).click(function() { sound = true;});
+    $( "#speaker" ).click(function() {  if(sound == true){sound = false;} else if(sound == false){sound = true;}; $("#info").slideUp();});
     $( ".profil_img" ).click(function() { countTrumpHead();});
 
         $.ajax({ // startet ajax

@@ -27,6 +27,8 @@
     <link rel="stylesheet" type="text/css" media="screen" href="css/animate.css" />
     <script src="js/jquery.min.js"></script>
     <script src="js/script.js"></script>
+    <link href="chardinjs.css" rel="stylesheet">
+    <script src="chardinjs.min.js"></script>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic">
 </head>
@@ -38,7 +40,7 @@
             <div class="content">
                 <div class="logo"><img src="img/logo.png"  height="165"
                     width="224" class="logo_img" /></div>
-                <div class="tweet">
+                <div class="tweet" data-intro="An awesome 18th-century painter, who found beauty in everyday, common things." data-position="right">
                 <div id="scoreboard">
                  <div style="font-size:20px; right: 5px; top: -35px;z-index:10; position: absolute; color:white;" id="score"></div>
                  <div style="font-size:20px; color:#1a8acd; right: 5px; top: -35px;z-index:5; position: absolute;" id="totalscore"></div>
@@ -124,6 +126,16 @@
                     </div>
                     <div class="buttons_col2 w-clearfix w-col w-col-6">
                         <div id="no" class="btn">
+                            <div class="btn_text">🙅 Nah, no way!</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>earfix w-col w-col-6">
+                        <div id="no" class="btn" data-intro="...but if you're positive that this isn't a tweet by the POTUS press overhere! Have fun playing! :)" data-position="bottom">
                             <div class="btn_text">🙅 Nah, no way!</div>
                         </div>
                     </div>
