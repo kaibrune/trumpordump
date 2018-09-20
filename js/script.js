@@ -29,21 +29,6 @@ $(function (){
       var clock2 = clock2a;
     }
     var date1 = Math.floor(Math.random()*12) + 1;
-
-    if (document.cookie.indexOf("visited=") >= 0) {
-        $('body').chardinJs('stop');
-        console.log("wt");
-      }
-      else {
-        expiry = new Date();
-        expiry.setTime(expiry.getTime()+(20*60*1000));
-      
-        document.cookie = "visited=yes; expires=" + expiry.toGMTString();
-        console.log("nl");
-        if($(window).width() >= 1025) {
-            $('body').chardinJs('start');
-        }
-      }
     
     $('#heart').html(randomheart1 +','+ randomheart2 +'K');
     $('#comment').html(randomcomment1 +','+ randomcomment2 +'K');
@@ -244,5 +229,20 @@ $(function (){
         }
     });
     });
+
+    if (document.cookie.indexOf("visited=") >= 0) {
+        $('body').chardinJs('stop');
+        console.log("wt");
+      }
+      else {
+        expiry = new Date();
+        expiry.setTime(expiry.getTime()+(20*60*1000));
+      
+        document.cookie = "visited=yes; expires=" + expiry.toGMTString();
+        console.log("nl");
+        if($(window).width() >= 1025) {
+           $('body').chardinJs('start'); 
+        }
+      }
 
 
