@@ -228,8 +228,6 @@ $(function (){
             alert('error loading content')
         }
     });
-    });
-
     if (document.cookie.indexOf("visited=") >= 0) {
         $('body').chardinJs('stop');
         console.log("wt");
@@ -244,5 +242,8 @@ $(function (){
            $('body').chardinJs('start'); 
         }
       }
+    });
+
+
 
 
