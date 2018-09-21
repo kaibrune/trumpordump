@@ -228,7 +228,7 @@ $(function (){
             alert('error loading content')
         }
     });
-    if (document.cookie.indexOf("visited=") >= 0) {
+/*     if (document.cookie.indexOf("visited=") >= 0) {
         $('body').chardinJs('stop');
         console.log("wt");
       }
@@ -241,7 +241,7 @@ $(function (){
         if($(window).width() >= 1025) {
            $('body').chardinJs('start'); 
         }
-      }
+      } */
     });
 
 
