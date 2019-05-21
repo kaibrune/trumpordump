@@ -8,14 +8,22 @@ $(function (){
     $('#wrong').hide();
     $('#right2').hide();
     $('#wrong2').hide();
-    $('#info').hide();
+    $('.imprint').hide();
+    $('.imprint_text').hide();
+
+    $('#right').removeClass('hide');
+    $('#wrong').removeClass('hide');
+    $('#right2').removeClass('hide');
+    $('#wrong2').removeClass('hide');
+    $('#imprint').removeClass('hide');
+    $('#imprint_text').removeClass('hide');
 /*     $('#score').hide(); */
 
     var $tweetcontainer= $('#inhalt');//variabel für den div mit der id inhalt wird asynchron mit dem dom geladen
 
     var dates = ["Jan.", "Feb.", "Mar.", "Apr.", "May", "Jun.", "Jul.", "Aug.", "Sep.", "Oct.", "Nov.", "Dez."];
     var date2 = dates[Math.floor(Math.random() * dates.length)];
-    var years = ["2017", "2018", "2016", "2015", "2014"];
+    var years = ["2017", "2019" ,"2018", "2016", "2015", "2014"];
     var year = years[Math.floor(Math.random() * years.length)];
     var randomheart1 = Math.floor(Math.random()*999) + 1;
     var randomheart2 = Math.floor(Math.random()*9) + 1;
@@ -30,16 +38,31 @@ $(function (){
     }
     var date1 = Math.floor(Math.random()*12) + 1;
     
+    
     $('#heart').html(randomheart1 +','+ randomheart2 +'K');
     $('#comment').html(randomcomment1 +','+ randomcomment2 +'K');
     $('#clock').html(clock1 +':'+ clock2);
     $('#date').html(date1 +' '+ date2 +' '+ year);
 
-    $( "#infoimg" ).click(function() { $('#info').slideToggle({direction: "up"}, 4000);});
-    $( "#exit" ).click(function() { $('#info').slideToggle({direction: "down"}, 4000);});
+    $( "#infoimg" ).click(function() { $('.imprint').fadeIn(1500); $('.imprint_text').delay(1700).fadeIn(600); $('body').css('overflow','hidden')});    
+    $( "#imprint" ).click(function() { $('.imprint_text').fadeOut(600); $('.imprint').delay(600).fadeOut(1500); $('body').css('overflow','visible') });
+    
+    $('#imprint').on("mousemove", function(evt) {
+        $('#closer').css({left: evt.pageX, top: evt.pageY});
+      });
 
     $( "#speaker" ).click(function() {  if(sound == true){sound = false;} else if(sound == false){sound = true;}; $("#info").slideUp();});
     $( ".profil_img" ).click(function() { countTrumpHead();});
+
+    var $mydiv = $('.tweet_text');
+    $mydiv.css('height', $mydiv.height() );
+
+    function resizeDiv(){
+        $mydiv.wrapInner('<div/>');
+        var newheight = $('div:first',$mydiv).height();
+        $mydiv.animate( {height: newheight},600 );
+    }
+    
 
         $.ajax({ // startet ajax
         type: 'GET', //modus
@@ -47,8 +70,12 @@ $(function (){
         success: function(data) { //wenn verfügbar dann
             var r = Math.floor(Math.random() * ((data.length - 1) - 0 + 1) + 0); //random object generieren für den ersten wurf
             $tweetcontainer.html('<p>'+ data[r].text +'</p>'), //ersten wurf in container schreiben
+            resizeDiv();
             status = parseInt(data[r].status); //status abfragen und in int convertieren
             console.log(status); //status ausgeben
+            setTimeout(() => {
+                $('.loader').fadeOut();
+            }, 500);
 
             $( "#yes" ).click(function() { //wenn yes geclickt dann
             if (status == 1) { //und status 1 ist
@@ -66,8 +93,8 @@ $(function (){
                 console.log('Right Answer!');//richtige antwort ausgeben
                 console.log(status);//status für nächsten wurf ausgeben
 /*                 $tweetcontainer.css('color', 'green');//schrift auf grün färben zu veranschaulichung */
-                $('#right').slideToggle({direction: "up"}, 4000);
-                $('#right').delay(2500).slideToggle({direction: "down"}, 4000);
+                $('#right').slideToggle({direction: "up"}, 2500);
+                $('#right').delay(2000).slideToggle({direction: "down"}, 2500);
                 playRightSound();
                 countRightAnswers();
                 $('#totalscore').addClass('animated fadeOut');
@@ -80,6 +107,7 @@ $(function (){
                 setTimeout(() => {//timeout setzen für 1s
                 $tweetcontainer.css('color', 'black');  //farbe wieder auf schwarz ändern
                 $tweetcontainer.html('<p>'+ data[r].text +'</p>'); //neuen wurf in container schreiben
+                resizeDiv();
                 $('#heart').html(randomheart1 +','+ randomheart2+'K');
                 $('#comment').html(randomcomment1 +','+ randomcomment2 +'K');
                 $('#clock').html(clock1 +':'+ clock2);
@@ -107,8 +135,8 @@ $(function (){
                 console.log('Wrong Answer!');
                 console.log(status);
 /*                 $tweetcontainer.css('color', 'red'); */
-                $('#wrong').slideToggle({direction: "up"}, 4000);
-                $('#wrong').delay(2500).slideToggle({direction: "down"}, 4000);
+                $('#wrong').slideToggle({direction: "up"}, 2500);
+                $('#wrong').delay(2000).slideToggle({direction: "down"}, 2500);
                 playWrongSound();
                 countWrongAnswers();
                 $('#totalscore').addClass('animated fadeOut');
@@ -120,6 +148,7 @@ $(function (){
                 setTimeout(() => {
                 $tweetcontainer.css('color', 'black');  
                 $tweetcontainer.html('<p>'+ data[r].text +'</p>'); 
+                resizeDiv();
                 $('#heart').html(randomheart1 +','+ randomheart2+'K');
                 $('#comment').html(randomcomment1 +','+ randomcomment2 +'K');
                 $('#clock').html(clock1 +':'+ clock2);
@@ -153,8 +182,8 @@ $(function (){
                 console.log('Right Answer!');
                 console.log(status);
 /*                 $tweetcontainer.css('color', 'green'); */
-                $('#right2').slideToggle({direction: "up"}, 4000);
-                $('#right2').delay(2500).slideToggle({direction: "down"}, 4000);
+                $('#right2').slideToggle({direction: "up"}, 2500);
+                $('#right2').delay(2000).slideToggle({direction: "down"}, 2500);
                 playRightSound();
                 countRightAnswers();
                 $('#totalscore').addClass('animated fadeOut');
@@ -166,6 +195,7 @@ $(function (){
                 setTimeout(() => {
 /*                 $tweetcontainer.css('color', 'black');   */
                 $tweetcontainer.html('<p>'+ data[r].text +'</p>'); 
+                resizeDiv();
                 $('#heart').html(randomheart1 +','+ randomheart2+'K');
                 $('#comment').html(randomcomment1 +','+ randomcomment2 +'K');
                 $('#clock').html(clock1 +':'+ clock2);
@@ -193,8 +223,8 @@ $(function (){
                 console.log('Wrong Answer!');
                 console.log(status);
 /*                 $tweetcontainer.css('color', 'red'); */
-                $('#wrong2').slideToggle({direction: "up"}, 4000);
-                $('#wrong2').delay(2500).slideToggle({direction: "down"}, 4000);
+                $('#wrong2').slideToggle({direction: "up"}, 2500);
+                $('#wrong2').delay(2000).slideToggle({direction: "down"}, 2500);
                 playWrongSound();
                 countWrongAnswers();
                 $('#totalscore').addClass('animated fadeOut');
@@ -206,6 +236,7 @@ $(function (){
                 setTimeout(() => {
                 $tweetcontainer.css('color', 'black');  
                 $tweetcontainer.html('<p>'+ data[r].text +'</p>'); 
+                resizeDiv();
                 $('#heart').html(randomheart1 +','+ randomheart2+'K');
                 $('#comment').html(randomcomment1 +','+ randomcomment2 +'K');
                 $('#clock').html(clock1 +':'+ clock2);
@@ -228,20 +259,6 @@ $(function (){
             alert('error loading content')
         }
     });
-/*     if (document.cookie.indexOf("visited=") >= 0) {
-        $('body').chardinJs('stop');
-        console.log("wt");
-      }
-      else {
-        expiry = new Date();
-        expiry.setTime(expiry.getTime()+(20*60*1000));
-      
-        document.cookie = "visited=yes; expires=" + expiry.toGMTString();
-        console.log("nl");
-        if($(window).width() >= 1025) {
-           $('body').chardinJs('start'); 
-        }
-      } */
     });
 
 

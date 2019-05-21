@@ -1,6 +1,6 @@
 {
-    "name": "TrumpOrDump",
-    "short_name": "TrumpOrDump",
+    "name": "trumpordump",
+    "short_name": "trumpordump",
     "icons": [
         {
             "src": "android-chrome-192x192.png",
@@ -14,6 +14,7 @@
         }
     ],
     "theme_color": "#ffffff",
-    "background_color": "#ffffff",
-    "display": "standalone"
+    "background_color": "#ecf0f1",
+    "display": "standalone",
+    "start_url": "/"
 }
