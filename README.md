@@ -13,7 +13,7 @@ Basically, the game is as easy as the politics of Trump himself. Randomly select
 
 ### 🔥 Demo
 
-Give it a try at [TrumpOrDump.de](https://trumpordump.de).
+Give it a try at [kaibrune.github.io/trumpordump/](https://kaibrune.github.io/trumpordump/).
 
 **ProTip:** The game is also great as a **drinking game**. Have a go, at every wrong answer.
 
