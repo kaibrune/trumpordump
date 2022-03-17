@@ -1,3 +1,6 @@
+<img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/1c7952126993361.6138cb94baf40.jpg" width="100%"/>
+
+----
 
 # Trump or Dump?
 Politics via Twitter? Trump makes it possible. But what exactly is he tweeting all day? In TrumpOrDump, you decide which tweet is genuine and which is not. You think that's easy? Well, then look at what dump the jerk posts.
